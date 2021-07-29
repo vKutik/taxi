@@ -14,7 +14,7 @@ import taxi.service.AuthenticationService;
 public class LoginController extends HttpServlet {
     private static final String DRIVERS_ID = "driver_id";
     private static final Injector injector = Injector.getInstance("taxi");
-    private AuthenticationService authenticationService =
+    private final AuthenticationService authenticationService =
             (AuthenticationService) injector.getInstance(AuthenticationService.class);
 
     @Override
@@ -25,7 +25,7 @@ public class LoginController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+    throws IOException, ServletException {
         String login = req.getParameter("login");
         String password = req.getParameter("password");
         try {
@@ -34,7 +34,7 @@ public class LoginController extends HttpServlet {
             resp.sendRedirect("/index");
         } catch (AuthenticationException e) {
             req.setAttribute("errorMsg", e.getMessage());
-            req.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(req, resp);
+            req.getRequestDispatcher("/WEB-INF/views/drivers/login.jsp").forward(req, resp);
         }
     }
 }

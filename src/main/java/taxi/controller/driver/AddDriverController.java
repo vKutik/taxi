@@ -2,6 +2,7 @@ package taxi.controller.driver;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,11 +25,11 @@ public class AddDriverController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException, ServletException {
         String name = req.getParameter("name");
-        String licenceNumber = req.getParameter("license_number");
+        String licenseNumber = req.getParameter("license_number");
         String login = req.getParameter("login");
         String password = req.getParameter("password");
-        Driver driver = new Driver(name, licenceNumber, login, password);
+        Driver driver = new Driver(name, licenseNumber, login, password);
         driverService.create(driver);
-        resp.sendRedirect("/drivers/add");
+        resp.sendRedirect("/index");
     }
 }

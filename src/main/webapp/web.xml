@@ -62,15 +62,6 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>addDriverToCar</servlet-name>
-        <servlet-class>taxi.controller.car.AddDriverToCarController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>addDriverToCar</servlet-name>
-        <url-pattern>/cars/drivers/add</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
         <servlet-name>deleteCar</servlet-name>
         <servlet-class>taxi.controller.car.DeleteCarController</servlet-class>
     </servlet>
