@@ -40,6 +40,6 @@ Architecture consists of 3 layers
     * In _/util/ConnectionUtil.java_, change the **URL**, **MYSQL_DRIVER**, **USERNAME** and **PASSWORD** properties to those
       which you specified when installing MySQL, or you can use the ones that are already there
     
-* After starting tomcat, go to http://localhost: your port that you specified when configuring tomcat,
+* After starting tomcat, go to _http://localhost: your port that you specified when configuring tomcat_,
       click "Register",
       to add a new driver.
