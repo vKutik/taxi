@@ -9,9 +9,9 @@ import org.apache.logging.log4j.Logger;
 import taxi.dao.impl.CarDaoImpl;
 
 public class ConnectionUtil {
-    public static final String URL = "jdbc:mysql://remotemysql.com:3306/v4bPdUzyQL";
-    public static final String USERNAME = "v4bPdUzyQL";
-    public static final String PASSWORD = "nTLMAN7FKJ";
+    public static final String URL = "jdbc:mysql://remotemysql.com:3306/YjHJrupVFh";
+    public static final String USERNAME = "YjHJrupVFh";
+    public static final String PASSWORD = "ykAkxAT1Ii";
     public static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     private static final Logger log = LogManager.getLogger(CarDaoImpl.class);
 
