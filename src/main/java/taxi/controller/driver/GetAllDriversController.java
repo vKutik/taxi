@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import taxi.lib.Injector;
 import taxi.model.Driver;
 import taxi.service.DriverService;
+
 @WebServlet(urlPatterns = "/drivers")
 public class GetAllDriversController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("taxi");
