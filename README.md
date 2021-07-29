@@ -34,12 +34,12 @@ Architecture consists of 3 layers
 ## What you need to do to start the project
 1. TomCat
     * add TomCat config
-    
+   
 2. MySQL 
     * in MySQL add code from _resource/init_db.sql file_ to create all boring table
     * In _/util/ConnectionUtil.java_, change the **URL**, **MYSQL_DRIVER**, **USERNAME** and **PASSWORD** properties to those
       which you specified when installing MySQL, or you can use the ones that are already there
-    
+      
 * After starting tomcat, go to _http://localhost: your port that you specified when configuring tomcat_,
       click "Register",
       to add a new driver.
