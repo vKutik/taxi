@@ -1,4 +1,4 @@
-##Taxi servise
+## Taxi servise
 
 This project implements a taxi service with login and registration.
 Using n-tier 3-layer architecture, also TomCat web server version 8.5.69.
