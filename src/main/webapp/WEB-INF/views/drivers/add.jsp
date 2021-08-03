@@ -11,9 +11,9 @@
     <tr>
         <th>Name</th>
         <th>License number</th>
-        <th>Add</th>
         <th>Login</th>
         <th>Password</th>
+        <th>Add</th>
     </tr>
     <tr>
         <td>

@@ -68,6 +68,7 @@ public class CarDaoImpl implements CarDao {
                 car = parseCarFromResultSet(resultSet);
             }
         } catch (SQLException e) {
+            log.error("Can't get car by id:" + id, e);
             throw new DataProcessingException("Can't get car by id: " + id, e);
         }
         if (car != null) {
@@ -95,6 +96,7 @@ public class CarDaoImpl implements CarDao {
                 cars.add(parseCarFromResultSet(resultSet));
             }
         } catch (SQLException e) {
+            log.error("Can't get all cars", e);
             throw new DataProcessingException("Can't get all cars", e);
         }
         cars.forEach(car -> car.setDrivers(getAllDriversByCarId(car.getId())));
@@ -113,6 +115,7 @@ public class CarDaoImpl implements CarDao {
             preparedStatement.setLong(3, car.getId());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
+            log.error("Can't update car " + car, e);
             throw new DataProcessingException("Can't update car " + car, e);
         }
         deleteAllDriversExceptList(car);
@@ -130,6 +133,7 @@ public class CarDaoImpl implements CarDao {
             preparedStatement.setLong(1, id);
             return preparedStatement.executeUpdate() > 0;
         } catch (SQLException e) {
+            log.error("Can't delete car by id " + id, e);
             throw new DataProcessingException("Can't delete car by id " + id, e);
         }
     }
@@ -157,6 +161,7 @@ public class CarDaoImpl implements CarDao {
                 cars.add(parseCarFromResultSet(resultSet));
             }
         } catch (SQLException e) {
+            log.error("Can't get all cars", e);
             throw new DataProcessingException("Can't get all cars", e);
         }
         cars.forEach(car -> car.setDrivers(getAllDriversByCarId(car.getId())));
@@ -182,6 +187,7 @@ public class CarDaoImpl implements CarDao {
             }
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
+            log.error("Can't insert drivers " + drivers, e);
             throw new DataProcessingException("Can't insert drivers " + drivers, e);
         }
     }
@@ -204,6 +210,7 @@ public class CarDaoImpl implements CarDao {
             }
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
+            log.error("Can't delete drivers " + exceptions, e);
             throw new DataProcessingException("Can't delete drivers " + exceptions, e);
         }
     }
@@ -223,6 +230,7 @@ public class CarDaoImpl implements CarDao {
             }
             return drivers;
         } catch (SQLException e) {
+            log.error("Can't get all drivers by car id" + carId, e);
             throw new DataProcessingException("Can't get all drivers by car id" + carId, e);
         }
     }
