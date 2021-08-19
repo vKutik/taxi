@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import taxi.dao.impl.CarDaoImpl;
 import taxi.exception.AuthenticationException;
 import taxi.lib.Injector;
 import taxi.service.AuthenticationService;
@@ -17,9 +16,9 @@ import taxi.service.AuthenticationService;
 public class LoginController extends HttpServlet {
     private static final String DRIVERS_ID = "driver_id";
     private static final Injector injector = Injector.getInstance("taxi");
+    private static final Logger log = LogManager.getLogger(LoginController.class);
     private final AuthenticationService authenticationService =
             (AuthenticationService) injector.getInstance(AuthenticationService.class);
-    private static final Logger log = LogManager.getLogger(CarDaoImpl.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
